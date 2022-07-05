@@ -51,4 +51,6 @@ export async function get(event) {
 		const blobClient = containerClient.getBlockBlobClient(time + '/' + userAgent.name + '.js');
 		await blobClient.upload(body, body.length);
 	}
+
+	return { body: { time } }
 }
